@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% for h in history %}
+        <p>{{ h.disease }}</p>
+        <p>{{ h.surgery }}</p>
+        <p>{{ h.medication }}</p>
+    {% endfor %}
+    {% load filters %}
+    {% load static %}
+    {{ SITE_URL }}
+    <a href="#" download="">
+        <img src="{% static qr|img_path %}" alt="">
+    </a>
+</body>
+</html>
